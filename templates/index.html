@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Currency Convertor App</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body>
+    <form method="POST">
+        <table align="center">
+            <th>Currency Converter</th>
+            <tr><td>
+            To_Currency:</td><td> <select name="from_curr" method='GET'>
+                {% for i in list_items %}
+                <option value= "{{i}}" SELECTED>{{i}}</option>"
+                {% endfor %}
+            </select><br><br></td></tr><tr><td>
+            From_Currency:</td><td> <select name="to_curr" method='GET'>
+                {% for i in list_items %}
+                <option value= "{{i}}" SELECTED>{{i}}</option>"
+                {% endfor %}
+            </select><br><br></td></tr><tr><td>
+            Enter Amount:</td><td> <input type="text" name='amt' id="amt"><br><br></td></tr>
+            <tr><td><button id="Convert">Convert</button></td></tr></table>
+        </form>
+        </p>
+    <div class="show-data" style="align-content: center;">
+        <p>
+            Result: {{converted}}
+        </p>
+        <form method="GET" action='/'>
+            <button id="Refresh">Refresh Data</button>
+        </form>
+    </div>
+</body>
+</html>
